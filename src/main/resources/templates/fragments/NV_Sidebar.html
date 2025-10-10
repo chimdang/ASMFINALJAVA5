@@ -104,6 +104,7 @@
         }
     }
 </style>
+
 <!-- sidebar.html -->
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
@@ -111,59 +112,41 @@
         <small>Quản lý cửa hàng của bạn</small>
     </div>
     <ul class="sidebar-menu">
-        <li>
-            <a href="NV_index.html">
-                <i class="bi bi-speedometer2"></i>
-                <span>Thống kê</span>
-            </a>
-        </li>
-        <li>
-            <a href="NV_QLsanpham.html">
-                <i class="bi bi-box-seam"></i>
-                <span>Quản lý sản phẩm</span>
-            </a>
-        </li>
-        <li>
-            <a href="NV_QLuser.html">
-                <i class="fa-regular fa-circle-user"></i>
-                <span>Quản lý user</span>
-            </a>
-        </li>
-        <li>
-            <a href="NV_QLdonhang.html">
-                <i class="bi bi-cart-check"></i>
-                <span>Đơn hàng</span>
-            </a>
-        </li>
-        <li>
-            <a href="NV_NhapKho.html">
-               <i class="fa-solid fa-inbox"></i>
-                <span>Nhập Kho</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#logoffModal">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Đăng xuất</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- 🔹 Logout Modal -->
-<div class="modal fade" id="logoffModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Đăng xuất</h5>
-                <button class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                Bạn có chắc chắn muốn đăng xuất không?
-            </div>
-            <div class="modal-footer">
-                <a href="KH_index.html" class="btn btn-danger">Đăng xuất</a>
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-            </div>
-        </div>
-    </div>
+	    <li>
+	        <a th:href="@{/employee/dashboard}">
+	            <i class="bi bi-speedometer2"></i>
+	            <span>Thống kê</span>
+	        </a>
+	    </li>
+	    <li>
+	        <a th:href="@{/employee/products}">
+	            <i class="bi bi-box-seam"></i>
+	            <span>Quản lý sản phẩm</span>
+	        </a>
+	    </li>
+	    <li>
+	        <a th:href="@{/employee/users}">
+	            <i class="fa-regular fa-circle-user"></i>
+	            <span>Quản lý user</span>
+	        </a>
+	    </li>
+	    <li>
+	        <a th:href="@{/employee/orders}">
+	            <i class="bi bi-cart-check"></i>
+	            <span>Đơn hàng</span>
+	        </a>
+	    </li>
+	    <li>
+	        <a th:href="@{/employee/import}">
+	           <i class="fa-solid fa-inbox"></i>
+	            <span>Nhập Kho</span>
+	        </a>
+	    </li>
+	    <li>
+	        <a href="#" data-bs-toggle="modal" data-bs-target="#logoffModal">
+	            <i class="bi bi-box-arrow-right"></i>
+	            <span>Đăng xuất</span>
+	        </a>
+	    </li>
+	</ul>
 </div>

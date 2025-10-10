@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,6 +84,7 @@
 </head>
 
 <body>
+	<div th:fragment="KH_Navbar">
     <!-- 🔹 Change Password Modal -->
     <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -137,9 +137,9 @@
                     Bạn có chắc chắn muốn đăng xuất không?
                 </div>
                 <div class="modal-footer">
-                    <a href="KH_index.html" class="btn btn-danger">Đăng xuất</a>
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                </div>
+				    <a th:href="@{/auth/login}" class="btn btn-danger">Đăng xuất</a>
+				    <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+				</div>
             </div>
         </div>
     </div>
@@ -149,11 +149,12 @@
         <div class="container">
             <div class="d-flex align-items-center justify-content-between">
                 <!-- Logo -->
-                <a href="KH_index.html" class="logo d-flex align-items-center me-3">
-                    <img src="anh/logo (1).png" id="logo">
-                </a>
+               <a th:href="@{/customer/index}" class="logo">
+				    <img th:src="@{/anh/logo (1).png}" alt="Pine Shop">
+				</a>
 
-                <!-- Search box -->
+
+                <!-- Search box -->	
                 <div class="flex-grow-1 mx-3">
                     <div class="search-box d-flex">
                         <input type="text" class="form-control" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!">
@@ -163,10 +164,10 @@
 
                 <!-- Cart & Account -->
                 <div class="d-flex align-items-center gap-3">
-                    <a href="KH_GioHang.html" class="cart-icon position-relative" style="text-decoration:none;">
-                        <i class="bi bi-cart3 fs-4" style="color:#43a047;"></i>
-                        <span class="cart-badge">3</span>
-                    </a>
+                    <a th:href="@{/customer/cart}" class="cart-icon position-relative" style="text-decoration:none;">
+					    <i class="bi bi-cart3 fs-4" style="color:#43a047;"></i>
+					    <span class="cart-badge">3</span>
+					</a>
                     <!-- Account Dropdown -->
                     <div class="dropdown">
                         <a class="btn d-flex align-items-center px-3 py-2 bg-white rounded-pill shadow-sm fw-bold"
@@ -179,24 +180,16 @@
                             Tài Khoản
                             <i class="bi bi-caret-down-fill ms-2" style="font-size:14px;"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="login.html">Đăng nhập</a></li>
-                            <li><a class="dropdown-item" href="login.html">Đăng ký</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="KH_QLuser.html">Quản Lý Tài Khoản</a></li>
-                            <!-- 🔹 Mở modal Change Password -->
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#changePasswordModal">Đổi Mật Khẩu</a></li>
-                            <li><a class="dropdown-item" href="KH_QLDonHang.html">Đơn Hàng Của Bạn</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <!-- 🔹 Mở modal Logout -->
-                            <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#logoffModal">Đăng Xuất</a></li>
-                        </ul>
+                      	<ul class="dropdown-menu dropdown-menu-end">
+						    <li><a class="dropdown-item" th:href="@{/auth/login}">Đăng nhập</a></li>
+						    <li><a class="dropdown-item" th:href="@{/auth/login}">Đăng ký</a></li>
+						    <li><hr class="dropdown-divider"></li>
+						    <li><a class="dropdown-item" th:href="@{/customer/profile}">Quản Lý Tài Khoản</a></li>
+						    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Đổi Mật Khẩu</a></li>
+						    <li><a class="dropdown-item" th:href="@{/customer/orders}">Đơn Hàng Của Bạn</a></li>
+						    <li><hr class="dropdown-divider"></li>
+						    <li><a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#logoffModal">Đăng Xuất</a></li>
+						</ul>
                     </div>
                 </div>
             </div>
