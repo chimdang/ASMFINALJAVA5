@@ -480,96 +480,130 @@
         </div>
 
         <!-- Add Product Modal -->
-        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addProductModalLabel">
-                            <i class="bi bi-plus-circle me-2"></i>Thêm sản phẩm mới
-                        </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="addProductForm">
-                            <!-- Basic Information -->
-                            <h6 class="mb-3"><i class="bi bi-info-circle me-2"></i>Thông tin cơ bản</h6>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="productName" class="form-label">Tên sản phẩm</label>
-                                    <input type="text" class="form-control" id="productName"
-                                        placeholder="Nhập tên sản phẩm" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="productSKU" class="form-label">Phân loại</label>
-                                    <input type="text" class="form-control" id="productSKU"
-                                        placeholder="VD: PROD-001" required>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="productCategory" class="form-label">Danh mục</label>
-                                <select class="form-select" id="productCategory" required>
-                                    <option value="">Chọn danh mục</option>
-                                    <option value="1">Thời trang nam</option>
-                                    <option value="2">Thời trang nữ</option>
-                                    <option value="3">Điện tử</option>
-                                    <option value="4">Phụ kiện</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="productDescription" class="form-label">Mô tả sản phẩm</label>
-                                <textarea class="form-control" id="productDescription" rows="3"
-                                    placeholder="Nhập mô tả chi tiết về sản phẩm"></textarea>
-                            </div>
-
-                            <!-- Pricing & Inventory -->
-                            <h6 class="mb-3 mt-4"><i class="bi bi-cash-stack me-2"></i>Giá & Tồn kho</h6>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="productPrice" class="form-label">Giá bán (₫)</label>
-                                    <input type="number" class="form-control" id="productPrice" placeholder="0" min="0"
-                                        required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="productStock" class="form-label">Tồn kho</label>
-                                    <input type="number" class="form-control" id="productStock" placeholder="0" min="0"
-                                        required>
-                                </div>
-                            </div>
-
-                            <!-- Product Images -->
-                            <h6 class="mb-3 mt-4"><i class="bi bi-image me-2"></i>Hình ảnh sản phẩm</h6>
-                            <div class="image-upload-area" id="imageUploadArea">
-                                <i class="bi bi-cloud-upload"></i>
-                                <p class="mb-2"><strong>Kéo thả hoặc nhấp để tải ảnh lên</strong></p>
-                                <p class="text-muted small mb-0">Hỗ trợ: JPG, PNG, JPEG (Tối đa 5 ảnh)</p>
-                                <input type="file" id="productImages" accept="image/*" multiple hidden>
-                            </div>
-                            <div class="preview-images" id="previewImages"></div>
-
-                            <!-- Status -->
-                            <h6 class="mb-3 mt-4"><i class="bi bi-toggle-on me-2"></i>Trạng thái</h6>
-                            <div class="mb-3">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="productStatus" checked>
-                                    <label class="form-check-label" for="productStatus">Đang bán</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="bi bi-x-circle me-2"></i>Hủy
-                        </button>
-                        <button type="button" class="btn btn-primary" id="saveProductBtn">
-                            <i class="bi bi-check-circle me-2"></i>Lưu sản phẩm
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+	    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel"
+	        aria-hidden="true">
+	        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <h5 class="modal-title" id="addProductModalLabel">
+	                        <i class="bi bi-plus-circle me-2"></i>Thêm sản phẩm mới
+	                    </h5>
+	                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	                </div>
+	                <div class="modal-body">
+	                    <form id="addProductForm">
+	                        <!-- Basic Information -->
+	                        <h6 class="mb-3"><i class="bi bi-info-circle me-2"></i>Thông tin cơ bản</h6>
+	                        <div class="row mb-3">
+	                            <div class="col-md-6">
+	                                <div class="">
+	                                    <label for="productName" class="form-label required-field">Tên sản phẩm</label>
+	                                    <input type="text" class="form-control" id="productName"
+	                                        placeholder="Nhập tên sản phẩm" required>
+	                                </div>
+	                            </div>
+	
+	                            <div class="col-md-6">
+	                                <div class="">
+	                                    <label for="productSKU" class="form-label required-field">Phân loại</label>
+	                                    <input type="text" class="form-control" id="productSKU" placeholder="VD: PROD-001"
+	                                        required>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row mb-3">
+	                            <label for="productCategory" class="form-label required-field">Danh mục</label>
+	                            <div class="col-md-6">
+	                                
+	                                <select class="form-select mb-2" id="productCategory" required>
+	                                    <option value="">Chọn danh mục</option>
+	                                    <option value="1">Thời trang nam</option>
+	                                    <option value="2">Thời trang nữ</option>
+	                                    <option value="3">Điện tử</option>
+	                                    <option value="4">Phụ kiện</option>
+	                                    <option value="5">Đồ gia dụng</option>
+	                                    <option value="6">Mỹ phẩm</option>
+	                                </select>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <!-- Thêm danh mục mới -->
+	                                <div class="input-group">
+	                                    <input type="text" class="form-control" id="newCategory"
+	                                        placeholder="Tạo danh mục mới...">
+	                                    <button type="button" class="btn btn-outline-primary" id="addCategoryBtn">
+	                                        <i class="bi bi-plus-circle"></i>
+	                                    </button>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="mb-3">
+	                            <label for="productDescription" class="form-label">Mô tả sản phẩm</label>
+	                            <textarea class="form-control" id="productDescription" rows="3"
+	                                placeholder="Nhập mô tả chi tiết về sản phẩm"></textarea>
+	                        </div>
+	
+	                        <!-- Pricing & Inventory -->
+	                        <h6 class="mb-3 mt-4"><i class="bi bi-cash-stack me-2"></i>Giá & Tồn kho</h6>
+	
+	                        <div class="row mb-3">
+	                            <div class="col-md-6">
+	                                <label for="productPrice" class="form-label required-field">Giá bán (₫)</label>
+	                                <input type="number" class="form-control" id="productPrice" placeholder="0" min="0"
+	                                    required>
+	                            </div>
+	
+	                            <div class="col-md-6">
+	                                <label for="productStock" class="form-label required-field">Tồn kho</label>
+	                                <input type="number" class="form-control" id="productStock" placeholder="0" min="0"
+	                                    required>
+	                            </div>
+	                        </div>
+	
+	                        <!-- Product Images -->
+	                        <h6 class="mb-3 mt-4"><i class="bi bi-image me-2"></i>Hình ảnh sản phẩm</h6>
+	
+	                        <div class="image-upload-area" id="imageUploadArea">
+	                            <i class="bi bi-cloud-upload"></i>
+	                            <p class="mb-2"><strong>Kéo thả hoặc nhấp để tải ảnh lên</strong></p>
+	                            <p class="text-muted small mb-0">Hỗ trợ: JPG, PNG, JPEG (Tối đa 5 ảnh)</p>
+	                            <input type="file" id="productImages" accept="image/*" multiple hidden>
+	                        </div>
+	
+	                        <div class="preview-images" id="previewImages"></div>
+	
+	                        <!-- Status -->
+	                        <h6 class="mb-3 mt-4"><i class="bi bi-toggle-on me-2"></i>Trạng thái</h6>
+	
+	                        <div class="mb-3">
+	                            <div class="form-check form-switch">
+	                                <input class="form-check-input" type="checkbox" id="productStatus" checked>
+	                                <label class="form-check-label" for="productStatus">
+	                                    Đang bán
+	                                </label>
+	                            </div>
+	                        </div>
+	
+	                        <div class="mb-3">
+	                            <div class="form-check form-switch">
+	                                <input class="form-check-input" type="checkbox" id="productFeatured">
+	                                <label class="form-check-label" for="productFeatured">
+	                                    Hết hàng
+	                                </label>
+	                            </div>
+	                        </div>
+	                    </form>
+	                </div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+	                        <i class="bi bi-x-circle me-2"></i>Hủy
+	                    </button>
+	                    <button type="button" class="btn btn-primary" id="saveProductBtn">
+	                        <i class="bi bi-check-circle me-2"></i>Lưu sản phẩm
+	                    </button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
     </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
